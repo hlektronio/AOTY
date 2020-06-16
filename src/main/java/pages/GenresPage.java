@@ -11,6 +11,7 @@ public class GenresPage {
     private WebDriver driver;
     private By headline = By.xpath("//*[@id=\"centerContent\"]/div/div[1]/h1");
     private By garage = By.linkText("Garage Rock");
+    private By rightContainer = By.cssSelector("rightContent");
 
 
     public GenresPage(WebDriver driver){
@@ -30,6 +31,7 @@ public class GenresPage {
     public String getGenresPageTitle(){
         return driver.findElement(headline).getText();
     }
+
 
 
 
