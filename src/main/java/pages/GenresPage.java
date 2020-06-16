@@ -10,8 +10,10 @@ public class GenresPage {
 
     private WebDriver driver;
     private By headline = By.xpath("//*[@id=\"centerContent\"]/div/div[1]/h1");
-    private By garage = By.linkText("Garage Rock");
-    private By rightContainer = By.cssSelector("rightContent");
+    private By grunge = By.cssSelector("#centerContent > div > div.rightContent > div:nth-child(2) > " +
+            "div:nth-child(2) > div:nth-child(133) > a");
+    private By garage = By.cssSelector("#centerContent > div > div.rightContent > " +
+            "div:nth-child(2) > div:nth-child(2) > div:nth-child(121) > a");
 
 
     public GenresPage(WebDriver driver){
@@ -19,7 +21,8 @@ public class GenresPage {
     }
 
     public GarageRockPage clickGarageRockGenre(){
-        WebElement garageLink = driver.findElement(garage);
+
+        WebElement garageLink = driver.findElement(grunge);
         Actions actions = new Actions(driver);
         actions.moveToElement(garageLink);
         actions.perform();
