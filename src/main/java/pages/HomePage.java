@@ -11,20 +11,24 @@ public class HomePage {
     private By newReleases = By.linkText("New Releases");
     private By lists = By.linkText("Lists");
     private By login = By.linkText("Sign In");
-    private By searchbox = By.id("searchContainer");
-    private By footer = By.cssSelector("div.footerContent");
+
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void clickOnGenres(String linkText) {
+    public void clickOnMenuItem(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
 
     public GenresPage clickGenresPage() {
-        clickOnGenres("Genres");
+        clickOnMenuItem("Genres");
         return new GenresPage(driver);
+    }
+
+    public LoginPage clickLoginPage(){
+        clickOnMenuItem("Sign In");
+        return new LoginPage(driver);
     }
 
     private String checkTopMenuLinks(By menuItem) {
@@ -46,13 +50,13 @@ public class HomePage {
         return checkTopMenuLinks(login);
     }
 
-    public boolean checkSearchBox(){
-        return driver.findElement(searchbox).isDisplayed();
-    }
-
-    public boolean checkFooterSection(){
-        return driver.findElement(footer).isDisplayed();
-    }
+//    public boolean checkSearchBox(){
+//        return driver.findElement(searchbox).isDisplayed();
+//    }
+//
+//    public boolean checkFooterSection(){
+//        return driver.findElement(footer).isDisplayed();
+//    }
 }
 
 

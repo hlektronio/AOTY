@@ -22,12 +22,12 @@ public class HomePageTests extends BaseTests {
 
     @Test
     public void checkSearchbox(){
-       assertTrue(homePage.checkSearchBox());
+       assertTrue(checkSearchBox());
     }
 
     @Test
     public void checkFooter(){
-       assertTrue(homePage.checkFooterSection());
+       assertTrue(checkFooterSection());
     }
 
 }
