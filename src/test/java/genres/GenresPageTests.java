@@ -1,4 +1,4 @@
-package genrespage;
+package genres;
 
 import base.BaseTests;
 
